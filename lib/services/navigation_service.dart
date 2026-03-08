@@ -69,8 +69,15 @@ class NavigationService {
       _navigationController.add(_currentNavigation);
       _startNavigationUpdates();
 
-      // Send initial instruction to helmet
-      await _helmetService.sendNavigationData(_currentNavigation.currentInstruction);
+      // Send initial instruction to helmet with complete data
+      await _helmetService.sendNavigationDataComplete(
+        instruction: _currentNavigation.currentInstruction,
+        distanceToNextTurn: _currentNavigation.distanceToNextTurn,
+        totalDistance: _currentNavigation.totalDistance,
+        estimatedTimeMinutes: _currentNavigation.estimatedTime.inMinutes,
+        status: 'navigating',
+        isNavigating: true,
+      );
 
       return _currentNavigation;
     } catch (e) {
@@ -95,8 +102,15 @@ class NavigationService {
       _navigationController.add(_currentNavigation);
       _startNavigationUpdates();
 
-      // Send initial instruction to helmet
-      await _helmetService.sendNavigationData(_currentNavigation.currentInstruction);
+      // Send initial instruction to helmet with complete data
+      await _helmetService.sendNavigationDataComplete(
+        instruction: _currentNavigation.currentInstruction,
+        distanceToNextTurn: _currentNavigation.distanceToNextTurn,
+        totalDistance: _currentNavigation.totalDistance,
+        estimatedTimeMinutes: _currentNavigation.estimatedTime.inMinutes,
+        status: 'navigating',
+        isNavigating: true,
+      );
 
       return _currentNavigation;
     }
@@ -115,8 +129,15 @@ class NavigationService {
       _currentNavigation = updatedNavigation;
       _navigationController.add(_currentNavigation);
 
-      // Send updated instruction to helmet
-      await _helmetService.sendNavigationData(_currentNavigation.currentInstruction);
+      // Send updated complete navigation data to helmet
+      await _helmetService.sendNavigationDataComplete(
+        instruction: _currentNavigation.currentInstruction,
+        distanceToNextTurn: _currentNavigation.distanceToNextTurn,
+        totalDistance: _currentNavigation.totalDistance,
+        estimatedTimeMinutes: _currentNavigation.estimatedTime.inMinutes,
+        status: _currentNavigation.status.name,
+        isNavigating: _currentNavigation.status == NavigationStatus.navigating,
+      );
     });
   }
 

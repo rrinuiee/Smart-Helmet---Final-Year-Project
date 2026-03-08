@@ -9,6 +9,8 @@ import '../widgets/safety_status_card.dart';
 import '../widgets/quick_action_buttons.dart';
 import 'navigation_screen.dart';
 import 'safety_monitoring_screen.dart';
+import 'helmet_settings_screen.dart';
+import 'simple_navigation_test.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -45,9 +47,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
         elevation: 0,
         actions: [
           IconButton(
+            icon: const Icon(Icons.bug_report),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SimpleNavigationTest(),
+                ),
+              );
+            },
+            tooltip: 'Test Navigation',
+          ),
+          IconButton(
+            icon: const Icon(Icons.display_settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HelmetSettingsScreen(),
+                ),
+              );
+            },
+            tooltip: 'Helmet Display Settings',
+          ),
+          IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              // TODO: Navigate to settings
+              // TODO: Navigate to general settings
             },
           ),
         ],
@@ -135,6 +161,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     },
                     onSOSPressed: () async {
                       await _showSOSDialog();
+                    },
+                    onHelmetSettingsPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HelmetSettingsScreen(),
+                        ),
+                      );
                     },
                   ),
                   

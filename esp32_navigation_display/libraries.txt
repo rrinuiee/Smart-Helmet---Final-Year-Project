@@ -1,0 +1,28 @@
+# Required Arduino Libraries for ESP32 Navigation Display
+
+## Install these libraries through Arduino IDE Library Manager:
+
+1. TFT_eSPI by Bodmer
+   - Version: Latest
+   - Used for: ST7789 LCD display control
+
+2. ArduinoJson by Benoit Blanchon  
+   - Version: 6.x or later
+   - Used for: Parsing JSON navigation data from Flutter app
+
+3. WebSockets by Markus Sattler
+   - Version: Latest
+   - Used for: WebSocket communication with Flutter app
+
+## Installation Steps:
+
+1. Open Arduino IDE
+2. Go to Sketch > Include Library > Manage Libraries
+3. Search for each library name above
+4. Click Install for each library
+
+## Important Notes:
+
+- After installing TFT_eSPI, copy the User_Setup.h file to configure it for ST7789
+- Make sure to select "ESP32 Dev Module" as your board type
+- Ensure your ESP32 and phone are on the same WiFi network

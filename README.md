@@ -1,137 +1,177 @@
-# Engotta (എങ്ങോട്ടാ) - Smart Navigation Companion
+# Smart Helmet Navigation System
 
-![License](https://img.shields.io/github/license/Rishi-k-s/engotta_app)
-![Flutter Version](https://img.shields.io/badge/flutter-^3.8.1-blue)
+This repository contains the **navigation module** of a larger **Smart Helmet System** designed to improve rider safety and reduce distractions while navigating.
 
-## What is Engotta?
-
-"എങ്ങോട്ടാ" (Engotta) - Malayalam for "Where to?" - is an innovative open hardware navigation solution designed specifically for two-wheeler riders. Born out of the frustration of constantly stopping to check maps and missing turns, Engotta provides a seamless navigation experience through a handlebar-mounted display.
-
-## Features
-
-### Companion App
-- 🎯 Real-time location tracking
-- 🗺️ Intelligent route planning
-- 📍 Location search with smart suggestions
-- 💾 Recent locations caching
-- 📱 User-friendly interface
-- 🔄 Current location detection
-- 🏃 Performance optimized with debouncing
-
-### Hardware Component (Coming Soon)
-- 📺 Handlebar-mounted display
-- 🧭 Turn-by-turn navigation
-- 🛠️ Custom PCB design
-- 🖨️ 3D printed mounting case
-- 🔋 Weather-resistant design
-- 📡 Bluetooth connectivity
-
-## App Screenshots
-[Coming Soon]
-
-## Getting Started
-
-### Prerequisites
-- Flutter SDK ^3.8.1
-- Android Studio / VS Code
-- Google Maps API Key
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/Rishi-k-s/engotta_app.git
-```
-
-2. Navigate to project directory
-```bash
-cd engotta_app
-```
-
-3. Install dependencies
-```bash
-flutter pub get
-```
-
-4. Add your Google Maps API key
-   - Create `lib/config/api_keys.dart`
-   - Add your API key:
-```dart
-class ApiKeys {
-  static const String googlePlacesApi = 'YOUR_API_KEY';
-}
-```
-
-5. Run the app
-```bash
-flutter run
-```
-
-## Hardware Component
-
-The hardware component is currently under development. It will include:
-- Custom PCB design files
-- 3D printable case models
-- Assembly instructions
-- Component list
-- Wiring diagrams
-
-[Coming Soon]
-
-## Contributing
-
-We welcome contributions! Whether it's:
-- 🐛 Bug fixes
-- ✨ New features
-- 📚 Documentation improvements
-- 🎨 UI/UX enhancements
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) before making a pull request.
-
-## Roadmap
-
-- [x] Initial app development
-- [x] Location services integration
-- [x] Search functionality
-- [x] Location caching
-- [ ] Hardware prototype
-- [ ] Custom PCB design
-- [ ] 3D printed case
-- [ ] Bluetooth connectivity
-- [ ] Turn-by-turn navigation
-- [ ] Weather resistance testing
-
-## Tech Stack
-
-### App
-- Flutter
-- Google Maps API
-- Geolocator
-- SharedPreferences
-- HTTP
-
-### Hardware (Planned)
-- Custom PCB
-- ESP32
-- LED Display
-- 3D Printed Components
-
-## About the Project
-
-Engotta was born from a simple yet common problem - the need to check maps repeatedly while riding. As a rider myself, I found it frustrating and potentially dangerous to keep stopping to check directions. This project aims to solve this problem with a simple, effective, and affordable solution.
-
-The name "എങ്ങോട്ടാ" (Engotta) comes from Malayalam, meaning "Where to?" - a common question we ask fellow riders. It perfectly encapsulates the purpose of this project - helping riders reach their destination safely and efficiently.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-Rishi K S - [@YourTwitter](https://twitter.com/YourTwitter)
-
-Project Link: [https://github.com/Rishi-k-s/engotta_app](https://github.com/Rishi-k-s/engotta_app)
+The system allows riders to view navigation instructions directly on a **helmet-mounted display**, eliminating the need to constantly check a mobile phone.
 
 ---
 
-<p align="center">Made with ❤️ for the riding community</p>
+# Project Overview
+
+The Smart Helmet project is a **team-developed system** that integrates navigation, safety monitoring, and smart vehicle control features into a motorcycle helmet.
+
+This repository focuses specifically on the **navigation subsystem**, which includes:
+
+* A custom mobile navigation application
+* Communication with helmet hardware
+* A helmet-mounted display powered by ESP32
+
+---
+
+# Navigation System
+
+The navigation system allows riders to navigate using a dedicated mobile app while directions are displayed on a **helmet-mounted display**.
+
+### Features
+
+* Destination search
+* Route calculation
+* Turn-by-turn navigation
+* Distance to next turn
+* Estimated time of arrival (ETA)
+* Real-time location tracking
+* Wireless communication with ESP32
+* Helmet display output
+
+---
+
+# System Architecture
+
+```id="9zw26p"
+Mobile Navigation App (Flutter)
+        ↓
+Navigation Instructions
+        ↓
+WiFi / WebSocket Communication
+        ↓
+ESP32 Dev Kit V1
+        ↓
+Helmet Mounted Display
+```
+
+---
+
+# Hardware Components
+
+* ESP32 DevKit V1
+* ST7789 TFT Display (prototype display)
+* Transparent OLED Display (planned helmet HUD)
+* Helmet mounting frame
+
+---
+
+# Software Stack
+
+### Mobile App
+
+* Flutter
+* OpenStreetMap / Flutter Map
+* Geolocator
+* HTTP APIs
+* WebSocket communication
+
+### Embedded System
+
+* ESP32
+* Arduino Framework
+* TFT_eSPI Library
+* ArduinoJson
+* WebSockets
+
+---
+
+# Other Smart Helmet Modules
+
+The navigation module is part of a larger **Smart Helmet System** developed as a team project.
+
+Other implemented modules include:
+
+### Drowsiness Detection
+
+* Camera-based monitoring
+* Eye tracking using MediaPipe
+
+### Accident Detection
+
+* Collision detection using MPU6050 sensor
+
+### Emergency SOS System
+
+* SMS alerts using GSM module
+* GPS location sharing
+
+### Smart Ignition Control
+
+* Helmet detection using RSSI
+* Communication between two ESP32 modules
+
+Note:
+Code for these modules is currently maintained separately by other team members and will be added in future updates if available.
+
+---
+
+# Repository Structure
+
+```id="w34pmu"
+smart-helmet-navigation
+│
+├── mobile-app
+│   └── flutter_navigation_app
+│
+├── esp32-navigation-display
+│   └── display_firmware
+│
+└── docs
+```
+
+---
+
+# Setup
+
+### Clone the Repository
+
+```id="fh0rrv"
+git clone https://github.com/rrinuiee/Smart-Helmet---Final-Year-Project
+```
+
+### Install Flutter Dependencies
+
+```id="zrd06v"
+flutter pub get
+```
+
+### Run the App
+
+```id="2pn0dr"
+flutter run
+```
+
+### Upload ESP32 Code
+
+Upload the firmware in the `esp32-navigation-display` directory using Arduino IDE.
+
+---
+
+# Development Status
+
+| Module                   | Status                    |
+| ------------------------ | ------------------------- |
+| Navigation App           | Completed                 |
+| ESP32 Navigation Display | Working Prototype         |
+| Helmet HUD Integration   | In Progress               |
+| Drowsiness Detection     | Implemented (team module) |
+| Accident Detection       | Implemented (team module) |
+| SOS Alert System         | Implemented (team module) |
+| Ignition Control         | Implemented (team module) |
+
+---
+
+# Author
+
+Rinza Yunus
+
+---
+
+# License
+
+MIT License
